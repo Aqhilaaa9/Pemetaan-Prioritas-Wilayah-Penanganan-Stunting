@@ -122,13 +122,14 @@ class SAWService
         foreach ($hasil as $index => &$item) {
             $item['ranking'] = $index + 1;
 
-            if ($item['ranking'] <= 3) {
+            if ($item['nilai_dss'] >= 0.70) {
                 $item['prioritas'] = 'Tinggi';
-            } elseif ($item['ranking'] <= 6) {
+            } elseif ($item['nilai_dss'] >= 0.40) {
                 $item['prioritas'] = 'Sedang';
             } else {
                 $item['prioritas'] = 'Rendah';
             }
+            
         }
         unset($item);
 
