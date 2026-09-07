@@ -67,10 +67,10 @@
             </div>
 
             <!-- 2. MIDDLE (DONUT CHART & PERSENTASE KABUPATEN) -->
-            <div class="dashboard-middle">
             <h2 class="section-title">
                 Diagram Data Stunting Di Pulau Lombok
             </h2>
+            <div class="dashboard-middle">
                 <!-- Donut Chart -->
                 <div class="chart-column">
                     <div class="chart-wrapper">

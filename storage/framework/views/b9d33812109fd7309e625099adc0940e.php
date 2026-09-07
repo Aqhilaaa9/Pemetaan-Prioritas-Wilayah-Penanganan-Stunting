@@ -9,13 +9,10 @@
 <?php $__env->startSection('content'); ?>
 
 <div class="content">
-
-    <div class="form-card">
-
         <h1 class="judul">
             Edit Data Pengguna
         </h1>
-
+    <div class="form-card">
         <form action="<?php echo e(route('updatePengguna',$user->id)); ?>" method="POST">
 
             <?php echo csrf_field(); ?>

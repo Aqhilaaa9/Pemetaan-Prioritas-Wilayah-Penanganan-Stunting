@@ -27,15 +27,11 @@
             </h3>
 
             <p>
-                Sistem ini merupakan sistem digunakan oleh Administrator dan Kepala Dinas
-                Kesehatan untuk melakukan pemetaan wilayah, analisis DSS,
+                Sistem ini merupakan sistem yang dapat digunakan untuk melakukan pemetaan wilayah, analisis DSS,
                 dan penentuan prioritas penanganan stunting pada setiap wilayah di Pulau Lombok.
             </p>
 
-            <small>
-                Belum memiliki akun?<br>
-                <a href="<?php echo e(route('register')); ?>" style="color: #fff; font-weight: 700; text-decoration: underline;">Daftar Akun Baru</a>
-            </small>
+            <a href="<?php echo e(route('register')); ?>" class="btn-login">Belum Punya Akun? Daftar</a>
 
         </div>
 
