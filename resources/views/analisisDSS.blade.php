@@ -9,11 +9,10 @@
 @section('content')
 
 <div class="content">
-
     <!-- ================= SECTION 1: DATA AWAL STUNTING ================= -->
     <div class="section-header-wrap">
         <h2 class="judul-section">
-            Data Awal Stunting Di Pulau<br>Lombok
+            Data Awal Stunting Di Pulau Lombok
         </h2>
 
         <div class="filter-area">
@@ -91,7 +90,7 @@
 
     <!-- ================= SECTION 2: MATRIKS PERBANDINGAN KRITERIA AHP ================= -->
     <h2 class="judul-section">
-        Matriks Perbandingan Kriteria untuk<br>Pemetaan Stunting
+        Matriks Perbandingan Kriteria untuk Pemetaan Stunting
     </h2>
 
     <div class="table-box">
@@ -137,7 +136,7 @@
 
     <!-- ================= SECTION 3: BOBOT KRITERIA AHP ================= -->
     <h2 class="judul-section">
-        Bobot Kriteria AHP untuk<br>Pemetaan Stunting
+        Bobot Kriteria AHP untuk Pemetaan Stunting
     </h2>
 
     <div class="table-box">
@@ -168,7 +167,7 @@
 
     <!-- ================= SECTION 4: NORMALISASI SAW ================= -->
     <h2 class="judul-section">
-        Normalisasi SAW untuk<br>Pemetaan Stunting
+        Normalisasi SAW untuk Pemetaan Stunting
     </h2>
 
     <div class="table-box">
@@ -208,7 +207,7 @@
 
     <!-- ================= SECTION 5: PENENTUAN PRIORITAS WILAYAH ================= -->
     <h2 class="judul-section">
-        Penentuan Prioritas Wilayah Penanganan<br>Stunting Di Pulau Lombok
+        Penentuan Prioritas Wilayah Penanganan Stunting Di Pulau Lombok
     </h2>
 
     <div class="table-box">

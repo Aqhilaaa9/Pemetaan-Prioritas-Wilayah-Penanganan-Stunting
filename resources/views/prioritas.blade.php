@@ -12,8 +12,7 @@
 
     <div class="header-prioritas">
         <h1>
-            Prioritas Penanganan Stunting Di<br>
-            Setiap Wilayah Di Pulau Lombok
+            Prioritas Penanganan Stunting Di Setiap Wilayah Di Pulau Lombok
         </h1>
 
         <div class="filter-area">

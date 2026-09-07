@@ -9,13 +9,10 @@
 @section('content')
 
 <div class="content">
-
-    <div class="form-card">
-
         <h1 class="judul">
             Edit Data Pengguna
         </h1>
-
+    <div class="form-card">
         <form action="{{ route('updatePengguna',$user->id) }}" method="POST">
 
             @csrf

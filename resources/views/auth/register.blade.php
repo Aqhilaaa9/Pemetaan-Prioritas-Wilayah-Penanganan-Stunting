@@ -5,165 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrasi Akun | SIPENTA</title>
 
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
-
-    <!-- CSS Laravel -->
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
-    <style>
-        body {
-            padding: 30px 15px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f3f6fa;
-        }
-        .container {
-            width: 1100px;
-            max-width: 100%;
-            min-height: auto;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,.12);
-            overflow: hidden;
-            display: flex;
-            background: #fff;
-            margin: auto;
-        }
-        .left {
-            width: 40%;
-            padding: 45px 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .right {
-            width: 60%;
-            padding: 40px 45px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .right h2 {
-            font-size: 32px;
-            font-weight: 800;
-            color: #0b8f8b;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px 18px;
-        }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        .form-group.full-width {
-            grid-column: span 2;
-        }
-        .form-group label {
-            font-size: 13px;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 6px;
-        }
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px 14px;
-            border: 1.5px solid #dcdcdc;
-            border-radius: 8px;
-            margin-bottom: 0;
-            font-size: 14px;
-            outline: none;
-            transition: .3s;
-            background-color: #fff;
-        }
-        .form-group input:focus,
-        .form-group select:focus {
-            border-color: #0ea5a0;
-            box-shadow: 0 0 0 3px rgba(14,165,160,.15);
-        }
-        .btn-daftar {
-            width: 100%;
-            margin-top: 20px;
-            padding: 12px;
-            font-size: 16px;
-            border-radius: 10px;
-            font-weight: 600;
-        }
-        .btn-login {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 24px;
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: .3s;
-        }
-        .btn-login:hover {
-            background: white;
-            color: #0b7f78;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 12px;
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: .2s;
-        }
-        .back-link:hover {
-            color: #fff;
-            transform: translateX(-3px);
-        }
-
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-            }
-            .left, .right {
-                width: 100%;
-                padding: 30px 20px;
-            }
-            .form-grid {
-                grid-template-columns: 1fr;
-            }
-            .form-group.full-width {
-                grid-column: span 1;
-            }
-        }
-    </style>
 </head>
 <body>
 
 <div class="container">
 
-    <!-- sebelah kiri -->
+    <!-- BAGIAN KIRI -->
     <div class="left">
         <div class="welcome">
-            <a href="{{ route('login') }}" class="back-link">← Kembali ke Login</a>
-            <br>
+
             <!-- Logo -->
-            <img src="{{ asset('images/Logo Bru.png') }}" alt="Logo SIPENTA" class="logo" style="width: 110px; margin-bottom: 15px;">
-            <h1 style="font-size: 32px; margin-bottom: 10px;">SIPENTA</h1>
-            <p style="font-size: 13px; line-height: 1.6; margin-bottom: 20px;">
+            <img src="{{ asset('images/Logo Bru.png') }}" alt="Logo SIPENTA" class="logo">
+
+            <h1>SIPENTA</h1>
+
+            <h3>
+                Sistem Informasi Pemetaan dan Prioritas Penanganan Stunting
+                Pulau Lombok
+            </h3>
+
+            <p>
                 Daftar akun baru untuk mengakses sistem informasi pemetaan dan analisis stunting. Pendaftaran Anda akan diverifikasi oleh Administrator sebelum dapat login.
             </p>
 
             <a href="{{ route('login') }}" class="btn-login">Sudah Punya Akun? Masuk</a>
+
         </div>
     </div>
 
-    <!-- sebelah kanan -->
+    <!-- BAGIAN KANAN -->
     <div class="right">
         <h2>Buat Akun Baru</h2>
 

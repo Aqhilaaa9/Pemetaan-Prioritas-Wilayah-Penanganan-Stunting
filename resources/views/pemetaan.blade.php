@@ -16,7 +16,7 @@
         <div class="pemetaan-header">
             <div class="header-title-container">
                 <h1 class="pemetaan-title">
-                    Pemetaan Stunting Di Setiap Wilayah<br>Di Pulau Lombok{{ $tahunSelected ? ' ' . $tahunSelected : '' }}
+                    Pemetaan Stunting Di Setiap Wilayah Di Pulau Lombok{{ $tahunSelected ? ' ' . $tahunSelected : '' }}
                 </h1>
             </div>
 
@@ -40,17 +40,17 @@
         <div class="legend-container">
             <div class="legend-item">
                 <span class="legend-dot tinggi"></span>
-                <span>Tinggi (>20%)</span>
+                <span>Tinggi</span>
             </div>
 
             <div class="legend-item">
                 <span class="legend-dot sedang"></span>
-                <span>Sedang (10% - 20%)</span>
+                <span>Sedang</span>
             </div>
 
             <div class="legend-item">
                 <span class="legend-dot rendah"></span>
-                <span>Rendah (<10%)</span>
+                <span>Rendah</span>
             </div>
 
             <div class="legend-item">
@@ -61,8 +61,6 @@
 
     </div>
 
-    <!-- ================= BOTTOM GRADIENT BANNER ================= -->
-    <div class="pemetaan-bottom-banner"></div>
 </div>
 
 <!-- ================= DATA DARI LARAVEL ================= -->
@@ -316,4 +314,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-@endsection
+@endsection
