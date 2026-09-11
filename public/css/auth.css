@@ -1,0 +1,271 @@
+/* Import Font */
+@import url('https://fonts.bunny.net/css?family=poppins:300,400,500,600,700,800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f3f6fa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:30px 15px;
+}
+
+.container{
+    width:1050px;
+    max-width:100%;
+    min-height:auto;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+    margin:auto;
+}
+
+/* ===================== */
+/* BAGIAN KIRI */
+/* ===================== */
+
+.left{
+    width:42%;
+    background:linear-gradient(180deg,#18d3d3,#0b7f78);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:45px 35px;
+    text-align:center;
+}
+
+.welcome{
+    width:100%;
+}
+
+.logo{
+    width:130px;
+    margin-bottom:15px;
+}
+
+.welcome h1{
+    font-size:36px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.welcome h3{
+    font-size:16px;
+    font-weight:600;
+    line-height:1.5;
+    margin-bottom:18px;
+}
+
+.welcome p{
+    font-size:13px;
+    line-height:1.7;
+    opacity:.95;
+    margin-bottom:22px;
+}
+
+.welcome small{
+    display:block;
+    font-size:13px;
+    line-height:1.8;
+    opacity:.95;
+}
+
+.btn-login{
+    display:inline-block;
+    margin-top:10px;
+    padding:10px 24px;
+    background:transparent;
+    border:2px solid white;
+    color:white;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+    transition:.3s;
+}
+
+.btn-login:hover{
+    background:white;
+    color:#0b7f78;
+}
+
+/* ===================== */
+/* BAGIAN KANAN */
+/* ===================== */
+
+.right{
+    width:58%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:45px 50px;
+}
+
+.right h2{
+    text-align:center;
+    color:#0b8f8b;
+    font-size:32px;
+    font-weight:800;
+    margin-bottom:22px;
+}
+
+form{
+    width:100%;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px 16px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group.full-width{
+    grid-column:span 2;
+}
+
+.form-group label{
+    margin-bottom:6px;
+    font-size:13px;
+    font-weight:600;
+    color:#444;
+}
+
+.form-group input,
+.form-group select{
+    margin-bottom:0;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-size:14px;
+    font-weight:600;
+    color:#444;
+}
+
+input, select{
+    width:100%;
+    padding:11px 15px;
+    border:1.5px solid #dcdcdc;
+    border-radius:10px;
+    margin-bottom:16px;
+    font-size:14px;
+    outline:none;
+    transition:.3s;
+    background-color: white;
+}
+
+input:focus, select:focus{
+    border-color:#0ea5a0;
+    box-shadow:0 0 0 3px rgba(14,165,160,.2);
+}
+
+.btn-daftar{
+    width:100%;
+    display:block;
+    margin:20px auto 0;
+    padding:13px;
+    border:none;
+    border-radius:10px;
+    background:#0b8f8b;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-daftar:hover{
+    background:#08726e;
+    transform:translateY(-2px);
+}
+
+/* ===================== */
+/* ALERT */
+/* ===================== */
+
+.success{
+    background:#d1fae5;
+    color:#065f46;
+    padding:12px 16px;
+    border-radius:10px;
+    margin-bottom:20px;
+    font-size:14px;
+    font-weight:500;
+    border:1px solid #a7f3d0;
+}
+
+.error{
+    background:#fee2e2;
+    color:#991b1b;
+    padding:12px 16px;
+    border-radius:10px;
+    margin-bottom:20px;
+    font-size:14px;
+    font-weight:500;
+    border:1px solid #fca5a5;
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media(max-width:900px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .left,
+    .right{
+        width:100%;
+    }
+
+    .left{
+        padding:35px 25px;
+    }
+
+    .right{
+        padding:35px 25px;
+    }
+
+    .welcome h1{
+        font-size:32px;
+    }
+
+    .welcome h3{
+        font-size:16px;
+    }
+
+    .right h2{
+        font-size:30px;
+        margin-bottom:20px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full-width{
+        grid-column:span 1;
+    }
+
+    .btn-daftar{
+        width:100%;
+    }
+}

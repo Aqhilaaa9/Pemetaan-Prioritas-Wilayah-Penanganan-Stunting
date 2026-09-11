@@ -1,0 +1,81 @@
+.page-title{
+    font-size:58px;
+    color:#07988d;
+    font-weight:700;
+    margin-bottom:45px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px 90px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.form-group input,
+.form-group select{
+
+    height:65px;
+    border:none;
+    border-radius:18px;
+    background:#0b9c96;
+    color:white;
+    padding:0 25px;
+    font-size:22px;
+    outline:none;
+}
+
+.form-group input::placeholder{
+    color:#d7d7d7;
+}
+
+.button-area{
+
+    display:flex;
+    justify-content:space-between;
+    margin-top:70px;
+}
+
+.btn-kembali{
+
+    background:#c63e38;
+    color:white;
+    text-decoration:none;
+    padding:16px 55px;
+    border-radius:18px;
+    font-size:28px;
+    font-weight:600;
+}
+
+.btn-import{
+
+    background:#16a516;
+    color:white;
+    border:none;
+    padding:16px 45px;
+    border-radius:18px;
+    font-size:24px;
+    margin-right:15px;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.btn-simpan{
+
+    background:#127c9f;
+    color:white;
+    border:none;
+    padding:16px 50px;
+    border-radius:18px;
+    font-size:24px;
+    cursor:pointer;
+}

@@ -1,0 +1,148 @@
+/* FORM DATA PENGGUNA */
+
+.content{
+
+    padding:30px;
+    width:100%;
+
+}
+
+.card-form{
+
+    background:#fff;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.card-form h1{
+
+    font-size:42px;
+    color:#243B5A;
+    margin-bottom:40px;
+    font-weight:700;
+
+}
+
+.judul{
+    font-size:42px;
+    font-weight:700;
+    color:#243B5A;
+    margin-bottom:40px;
+}
+
+/* FORM */
+
+.form-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    font-size:18px;
+    font-weight:600;
+    color:#2f3c4f;
+    margin-bottom:10px;
+
+}
+
+.form-group input,
+.form-group select{
+    height:60px;
+    border:1px solid #dcdcdc;
+    border-radius: 18px;
+    padding:0 20px;
+    font-size:18px;
+    outline:none;
+    transition:.3s;
+    background:#fff;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#0F9D94;
+    box-shadow:0 0 0 3px rgba(15,157,148,.15);
+
+}
+
+/* Supaya Email dan Password berada 1 kolom penuh */
+
+.full{
+
+    grid-column:1/3;
+
+}
+
+/* BUTTON */
+
+.btn-area{
+    margin-top:45px;
+    display:flex;
+    justify-content:flex-end;
+    gap:18px;
+
+}
+
+.btn-simpan{
+    background:#2E7D32;
+    color:#fff;
+    border:none;
+    padding:14px 35px;
+    border-radius:12px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.btn-simpan:hover{
+    background:#1b5e20;
+
+}
+
+.btn-batal{
+    background:#dd514b;
+    color:#fff;
+    text-decoration:none;
+    border:none;
+    border-radius:15px;
+    padding:16px 38px;
+    font-size:20px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.btn-batal:hover{
+    background:#b52b27;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .full{
+
+        grid-column:auto;
+
+    }
+
+}

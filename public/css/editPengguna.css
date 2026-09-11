@@ -1,0 +1,105 @@
+.content{
+    padding:35px;
+    width:100%;
+}
+
+.form-card{
+    background:#fff;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.judul{
+    font-size:42px;
+    font-weight:700;
+    color:#243B5A;
+    margin-bottom:40px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group label{
+    font-size:18px;
+    font-weight:600;
+    color:#2f3c4f;
+    margin-bottom:10px;
+}
+
+.form-group input,
+.form-group select{
+    height:60px;
+    border:1px solid #d8d8d8;
+    border-radius:18px;
+    padding:0 20px;
+    font-size:18px;
+    outline:none;
+    transition:.3s;
+    background:#fff;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#0F9D94;
+    box-shadow:0 0 0 3px rgba(15,157,148,.15);
+}
+
+.button-area{
+    margin-top:45px;
+    display:flex;
+    justify-content:flex-end;
+    gap:18px;
+}
+
+.btn-batal{
+    background:#dd514b;
+    color:#fff;
+    text-decoration:none;
+    border:none;
+    border-radius:15px;
+    padding:16px 38px;
+    font-size:20px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-simpan{
+    background:#2e7d32;
+    color:#fff;
+    border:none;
+    border-radius:15px;
+    padding:16px 38px;
+    font-size:20px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-batal:hover{
+    background:#c63e38;
+}
+
+.btn-simpan:hover{
+    background:#256628;
+}
+
+@media(max-width:992px){
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .button-area{
+        justify-content:center;
+    }
+
+}

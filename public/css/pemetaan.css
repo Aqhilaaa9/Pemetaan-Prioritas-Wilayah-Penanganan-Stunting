@@ -1,0 +1,397 @@
+* {
+    box-sizing: border-box;
+}
+
+.pemetaan-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff;
+}
+
+.pemetaan-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px 30px 30px;
+}
+
+/* =========================
+   HEADER & FILTER
+========================= */
+.pemetaan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.header-title-container {
+    flex: 1;
+    text-align: left;
+}
+
+.pemetaan-title {
+    color: #009c95;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0;
+    text-shadow: 0 4px 6px rgba(0, 156, 149, 0.15);
+    letter-spacing: -0.5px;
+}
+
+.tahun-select {
+    background-color: #009c95;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 156, 149, 0.25);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.tahun-select:hover {
+    background-color: #008781;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   MAP CONTAINER
+========================= */
+#map {
+    width: 100%;
+    height: 620px;
+    background: #ffffff !important;
+    border-radius: 12px;
+}
+
+/* =========================
+   MAP CONTAINER & MARKERS
+========================= */
+#map {
+    width: 100%;
+    height: 640px;
+    background: #ffffff !important;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 1. Kabupaten Region Center Label */
+.custom-kabupaten-marker {
+    background: transparent;
+    border: none;
+}
+
+.kabupaten-label-box {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(4px);
+    border: 1.5px solid rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 3px 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.kabupaten-label-box:hover {
+    transform: scale(1.08);
+    background: #ffffff;
+    border-color: #009c95;
+    box-shadow: 0 4px 12px rgba(0, 156, 149, 0.35);
+}
+
+.kabupaten-label-name {
+    font-size: 13px;
+    font-weight: 800;
+    color: #1a202c;
+    line-height: 1.2;
+}
+
+.kabupaten-label-persen {
+    font-size: 12px;
+    font-weight: 700;
+    color: #008781;
+}
+
+/* 2. Puskesmas Point Marker Pin */
+.custom-puskesmas-marker {
+    background: transparent;
+    border: none;
+}
+
+.puskesmas-marker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.puskesmas-marker-container:hover {
+    transform: translateY(-5px) scale(1.15);
+    z-index: 9999 !important;
+}
+
+.puskesmas-pin-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.puskesmas-pin-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
+}
+
+.puskesmas-status-dot {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.puskesmas-marker-card {
+    margin-top: -2px;
+    background: rgba(17, 24, 39, 0.9);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    padding: 2px 7px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+}
+
+.puskesmas-marker-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.2px;
+}
+
+.puskesmas-marker-rate {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+/* =========================
+   LEGEND
+========================= */
+.legend-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.legend-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1.5px solid rgba(0, 0, 0, 0.15);
+}
+
+.legend-dot.tinggi {
+    background-color: #ff3131;
+}
+
+.legend-dot.sedang {
+    background-color: #fff000;
+}
+
+.legend-dot.rendah {
+    background-color: #54c414;
+}
+
+.legend-pin-icon {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+/* =========================
+   POPUP MODAL / CARD
+========================= */
+.leaflet-popup-content-wrapper {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 24px !important;
+}
+
+.leaflet-popup-content {
+    margin: 0 !important;
+    width: 380px !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    color: #ffffff !important;
+    padding: 10px 14px 0 0 !important;
+    font-size: 24px !important;
+    z-index: 10;
+}
+
+.leaflet-popup-tip-container {
+    display: none !important;
+}
+
+.popup-card {
+    background-color: #00938b;
+    border-radius: 24px;
+    padding: 24px 28px;
+    color: #ffffff;
+    font-family: inherit;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.popup-card.puskesmas-card {
+    background: linear-gradient(135deg, #008781 0%, #006b66 100%);
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.popup-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.popup-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+}
+
+.popup-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 2px;
+}
+
+.popup-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-top: 4px;
+}
+
+.popup-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.popup-row {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popup-row strong {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.popup-row.highlight-row {
+    background: rgba(0, 0, 0, 0.15);
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.badge-persen {
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.status-tag {
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.status-tag.status-tinggi {
+    background-color: #ff3131;
+    color: #ffffff;
+}
+
+.status-tag.status-sedang {
+    background-color: #fff000;
+    color: #222222;
+}
+
+.status-tag.status-rendah {
+    background-color: #54c414;
+    color: #ffffff;
+}
+
+/* =========================
+   BOTTOM DECORATIVE FOOTER
+========================= */
+.pemetaan-bottom-banner {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(180deg, #44bfb5 0%, #36d3c7 100%);
+    margin-top: 35px;
+    border-radius: 16px 16px 0 0;
+}
