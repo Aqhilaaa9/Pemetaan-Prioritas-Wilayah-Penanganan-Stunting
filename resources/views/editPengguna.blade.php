@@ -13,7 +13,7 @@
             Edit Data Pengguna
         </h1>
     <div class="form-card">
-        <form action="{{ route('updatePengguna',$user->id) }}" method="POST">
+        <form action="{{ route('updatePengguna',$user->id) }}" method="POST" autocomplete="off">
 
             @csrf
             @method('PUT')
@@ -25,7 +25,8 @@
                     <input
                         type="text"
                         name="nama_depan"
-                        value="{{ old('nama_depan',$user->nama_depan) }}">
+                        value="{{ old('nama_depan',$user->nama_depan) }}"
+                        autocomplete="off">
                 </div>
 
                 <div class="form-group">
@@ -33,7 +34,8 @@
                     <input
                         type="text"
                         name="nama_belakang"
-                        value="{{ old('nama_belakang',$user->nama_belakang) }}">
+                        value="{{ old('nama_belakang',$user->nama_belakang) }}"
+                        autocomplete="off">
                 </div>
 
                 <div class="form-group">
@@ -41,7 +43,8 @@
                     <input
                         type="text"
                         name="username"
-                        value="{{ old('username',$user->username) }}">
+                        value="{{ old('username',$user->username) }}"
+                        autocomplete="off">
                 </div>
 
                 <div class="form-group">
@@ -49,7 +52,8 @@
                     <input
                         type="text"
                         name="instansi"
-                        value="{{ old('instansi',$user->instansi) }}">
+                        value="{{ old('instansi',$user->instansi) }}"
+                        autocomplete="off">
                 </div>
 
                 <div class="form-group">
@@ -57,7 +61,8 @@
                     <input
                         type="email"
                         name="email"
-                        value="{{ old('email',$user->email) }}">
+                        value="{{ old('email',$user->email) }}"
+                        autocomplete="off">
                 </div>
 
                 <div class="form-group">
@@ -85,6 +90,7 @@
                     <input
                         type="password"
                         name="password"
+                        autocomplete="new-password"
                         placeholder="Kosongkan jika tidak ingin diubah">
                 </div>
 

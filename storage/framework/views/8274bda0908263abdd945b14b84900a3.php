@@ -60,7 +60,14 @@
                         <tr>
                             <td><?php echo e($loop->iteration); ?></td>
                             <td><?php echo e($item['kabupaten']); ?></td>
-                            <td><?php echo e($item['puskesmas']); ?></td>
+                            <td>
+                                <a href="<?php echo e(route('pemetaan', array_filter(['puskesmas_id' => $item['puskesmas_id'] ?? null, 'puskesmas' => $item['puskesmas'], 'tahun' => request('tahun')]))); ?>" 
+                                   class="link-puskesmas" 
+                                   title="Lihat di Pemetaan">
+                                    <?php echo e($item['puskesmas']); ?>
+
+                                </a>
+                            </td>
                             <td><?php echo e(number_format($item['nilai_dss'], 2)); ?></td>
                             <td><?php echo e($item['ranking']); ?></td>
                             <td>

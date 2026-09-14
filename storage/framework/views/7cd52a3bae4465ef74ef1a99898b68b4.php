@@ -63,7 +63,14 @@
                         ?>
                         <tr>
                             <td><?php echo e($loop->iteration); ?></td>
-                            <td><?php echo e($item->puskesmas->nama_puskesmas ?? '-'); ?></td>
+                            <td>
+                                <a href="<?php echo e(route('pemetaan', array_filter(['puskesmas_id' => $item->puskesmas_id ?? ($item->puskesmas->id ?? null), 'puskesmas' => $item->puskesmas->nama_puskesmas ?? null, 'tahun' => request('tahun')]))); ?>" 
+                                   class="link-puskesmas" 
+                                   title="Lihat di Pemetaan">
+                                    <?php echo e($item->puskesmas->nama_puskesmas ?? '-'); ?>
+
+                                </a>
+                            </td>
                             <td><?php echo e(number_format($stuntingPersen, 1)); ?>%</td>
                             <td><?php echo e(number_format($item->jumlah_balita)); ?></td>
                             <td><?php echo e(number_format($item->jumlah_bblr, 1)); ?>%</td>
@@ -226,7 +233,14 @@
                     <?php $__currentLoopData = $hasil; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td><?php echo e($loop->iteration); ?></td>
-                            <td><?php echo e($item['puskesmas']); ?></td>
+                            <td>
+                                <a href="<?php echo e(route('pemetaan', array_filter(['puskesmas_id' => $item['puskesmas_id'] ?? null, 'puskesmas' => $item['puskesmas'], 'tahun' => request('tahun')]))); ?>" 
+                                   class="link-puskesmas" 
+                                   title="Lihat di Pemetaan">
+                                    <?php echo e($item['puskesmas']); ?>
+
+                                </a>
+                            </td>
                             <td><?php echo e(number_format($item['nilai_dss'], 2)); ?></td>
                             <td><?php echo e($item['ranking']); ?></td>
                             <td>

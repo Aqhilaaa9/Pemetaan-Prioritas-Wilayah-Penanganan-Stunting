@@ -63,7 +63,13 @@
                         @endphp
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->puskesmas->nama_puskesmas ?? '-' }}</td>
+                            <td>
+                                <a href="{{ route('pemetaan', array_filter(['puskesmas_id' => $item->puskesmas_id ?? ($item->puskesmas->id ?? null), 'puskesmas' => $item->puskesmas->nama_puskesmas ?? null, 'tahun' => request('tahun')])) }}" 
+                                   class="link-puskesmas" 
+                                   title="Lihat di Pemetaan">
+                                    {{ $item->puskesmas->nama_puskesmas ?? '-' }}
+                                </a>
+                            </td>
                             <td>{{ number_format($stuntingPersen, 1) }}%</td>
                             <td>{{ number_format($item->jumlah_balita) }}</td>
                             <td>{{ number_format($item->jumlah_bblr, 1) }}%</td>
@@ -226,7 +232,13 @@
                     @foreach($hasil as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item['puskesmas'] }}</td>
+                            <td>
+                                <a href="{{ route('pemetaan', array_filter(['puskesmas_id' => $item['puskesmas_id'] ?? null, 'puskesmas' => $item['puskesmas'], 'tahun' => request('tahun')])) }}" 
+                                   class="link-puskesmas" 
+                                   title="Lihat di Pemetaan">
+                                    {{ $item['puskesmas'] }}
+                                </a>
+                            </td>
                             <td>{{ number_format($item['nilai_dss'], 2) }}</td>
                             <td>{{ $item['ranking'] }}</td>
                             <td>

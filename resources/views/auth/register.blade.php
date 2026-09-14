@@ -48,33 +48,33 @@
             </div>
         @endif
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" autocomplete="off">
             @csrf
 
             <div class="form-grid">
                 <div class="form-group">
                     <label>Nama Depan <span style="color:red">*</span></label>
-                    <input type="text" name="nama_depan" value="{{ old('nama_depan') }}" placeholder="Nama depan" required>
+                    <input type="text" name="nama_depan" value="{{ old('nama_depan') }}" placeholder="Nama depan" autocomplete="off" required>
                 </div>
 
                 <div class="form-group">
                     <label>Nama Belakang <span style="color:red">*</span></label>
-                    <input type="text" name="nama_belakang" value="{{ old('nama_belakang') }}" placeholder="Nama belakang" required>
+                    <input type="text" name="nama_belakang" value="{{ old('nama_belakang') }}" placeholder="Nama belakang" autocomplete="off" required>
                 </div>
 
                 <div class="form-group">
                     <label>Username <span style="color:red">*</span></label>
-                    <input type="text" name="username" value="{{ old('username') }}" placeholder="Username unik" required>
+                    <input type="text" name="username" value="{{ old('username') }}" placeholder="Username unik" autocomplete="off" required>
                 </div>
 
                 <div class="form-group">
                     <label>Instansi <span style="color:red">*</span></label>
-                    <input type="text" name="instansi" value="{{ old('instansi') }}" placeholder="Contoh: Dinas Kesehatan" required>
+                    <input type="text" name="instansi" value="{{ old('instansi') }}" placeholder="Contoh: Dinas Kesehatan" autocomplete="off" required>
                 </div>
 
                 <div class="form-group">
                     <label>Email <span style="color:red">*</span></label>
-                    <input type="email" name="email" value="{{ old('email') }}" placeholder="alamat@email.com" required>
+                    <input type="email" name="email" value="{{ old('email') }}" placeholder="alamat@email.com" autocomplete="off" required>
                 </div>
 
                 <div class="form-group">
@@ -88,12 +88,12 @@
 
                 <div class="form-group">
                     <label>Kata Sandi <span style="color:red">*</span></label>
-                    <input type="password" name="password" placeholder="Minimal 6 karakter" required>
+                    <input type="password" name="password" placeholder="Minimal 6 karakter" autocomplete="new-password" required>
                 </div>
 
                 <div class="form-group">
                     <label>Konfirmasi Kata Sandi <span style="color:red">*</span></label>
-                    <input type="password" name="password_confirmation" placeholder="Ulangi kata sandi" required>
+                    <input type="password" name="password_confirmation" placeholder="Ulangi kata sandi" autocomplete="new-password" required>
                 </div>
             </div>
 

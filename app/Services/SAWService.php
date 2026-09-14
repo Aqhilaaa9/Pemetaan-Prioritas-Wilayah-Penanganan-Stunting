@@ -34,6 +34,7 @@ class SAWService
             $alternatif[] = [
                 'id'                   => $item->id,
                 'kabupaten_id'         => $item->kabupaten_id,
+                'puskesmas_id'         => $item->puskesmas_id ?? ($item->puskesmas->id ?? null),
                 'kabupaten'            => $item->kabupaten->nama_kabupaten ?? '-',
                 'puskesmas'            => $item->puskesmas->nama_puskesmas ?? '-',
                 'jumlah_balita'        => (int) $item->jumlah_balita,
@@ -100,6 +101,7 @@ class SAWService
 
             $hasil[] = [
                 'id'              => $item['id'],
+                'puskesmas_id'    => $alternatif[$index]['puskesmas_id'] ?? null,
                 'kabupaten'       => $item['kabupaten'],
                 'puskesmas'       => $item['puskesmas'],
                 'stunting_persen' => $alternatif[$index]['stunting_persen'] ?? 0,

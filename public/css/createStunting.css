@@ -39,10 +39,9 @@
 }
 
 .button-area{
-
     display:flex;
     justify-content:space-between;
-    margin-top:70px;
+    margin-top:100px;
 }
 
 .btn-kembali{
@@ -50,10 +49,9 @@
     background:#c63e38;
     color:white;
     text-decoration:none;
-    padding:16px 55px;
+    padding: 12px 25px;
     border-radius:18px;
-    font-size:28px;
-    font-weight:600;
+    font-size:24px;
 }
 
 .btn-import{
@@ -61,7 +59,7 @@
     background:#16a516;
     color:white;
     border:none;
-    padding:16px 45px;
+    padding: 12px 25px;
     border-radius:18px;
     font-size:24px;
     margin-right:15px;
@@ -74,7 +72,7 @@
     background:#127c9f;
     color:white;
     border:none;
-    padding:16px 50px;
+    padding: 12px 25px;
     border-radius:18px;
     font-size:24px;
     cursor:pointer;

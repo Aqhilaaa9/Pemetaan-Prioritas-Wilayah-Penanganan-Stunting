@@ -58,7 +58,13 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item['kabupaten'] }}</td>
-                            <td>{{ $item['puskesmas'] }}</td>
+                            <td>
+                                <a href="{{ route('pemetaan', array_filter(['puskesmas_id' => $item['puskesmas_id'] ?? null, 'puskesmas' => $item['puskesmas'], 'tahun' => request('tahun')])) }}" 
+                                   class="link-puskesmas" 
+                                   title="Lihat di Pemetaan">
+                                    {{ $item['puskesmas'] }}
+                                </a>
+                            </td>
                             <td>{{ number_format($item['nilai_dss'], 2) }}</td>
                             <td>{{ $item['ranking'] }}</td>
                             <td>
