@@ -59,7 +59,7 @@
 .table-wrapper {
     background: white;
     border-radius: 14px;
-    overflow: hidden;
+    overflow-x: auto;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     border: 1px solid #e0e0e0;
 }
@@ -167,8 +167,62 @@ tbody tr:nth-child(even) {
         font-size: 30px;
     }
 
-    .filter-area select {
+    .filter-area {
         width: 100%;
+        justify-content: flex-start;
+    }
+
+    .filter-area form {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .filter-area select {
+        flex: 1 1 200px;
+        width: auto;
         max-width: 280px;
+    }
+
+    table {
+        min-width: 640px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .header-prioritas {
+        margin-bottom: 20px;
+    }
+
+    .header-prioritas h1 {
+        font-size: 23px;
+    }
+
+    .filter-area select {
+        flex-basis: 100%;
+        max-width: none;
+        font-size: 15px;
+        padding: 11px 14px;
+    }
+
+    thead th {
+        font-size: 14px;
+        padding: 12px 10px;
+    }
+
+    tbody td {
+        font-size: 14px;
+        padding: 10px 8px;
+    }
+
+    .prioritas-tinggi,
+    .prioritas-sedang,
+    .prioritas-rendah {
+        min-width: 72px;
+        padding: 5px 10px;
+    }
+
+    .empty-data {
+        padding: 36px 16px;
+        font-size: 16px;
     }
 }

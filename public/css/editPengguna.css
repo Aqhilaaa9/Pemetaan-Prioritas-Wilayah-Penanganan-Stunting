@@ -96,10 +96,59 @@
 
     .form-grid{
         grid-template-columns:1fr;
+        gap:20px;
     }
 
     .button-area{
         justify-content:center;
     }
 
+    .judul{
+        font-size:32px;
+        margin-bottom:24px;
+    }
+
+    .form-card{
+        padding:26px 22px;
+    }
+
+}
+
+@media (max-width: 575.98px) {
+    .judul {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .form-card {
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+
+    .form-group label {
+        font-size: 15px;
+    }
+
+    .form-group input,
+    .form-group select {
+        height: 50px;
+        border-radius: 14px;
+        font-size: 16px;
+    }
+
+    .button-area {
+        flex-direction: column-reverse;
+        gap: 12px;
+        margin-top: 30px;
+    }
+
+    .btn-batal,
+    .btn-simpan {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        border-radius: 12px;
+        font-size: 16px;
+        text-align: center;
+    }
 }

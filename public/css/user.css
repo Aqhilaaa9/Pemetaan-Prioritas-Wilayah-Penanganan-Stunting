@@ -200,3 +200,64 @@
     color:#991b1b;
     border:1px solid #fca5a5;
 }
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991.98px) {
+    .header-content {
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .judul {
+        font-size: 30px;
+        margin-bottom: 0;
+    }
+
+    .section-box {
+        padding: 16px;
+    }
+
+    .table-users {
+        min-width: 820px;
+    }
+
+    .table-users th {
+        padding: 13px 10px;
+        font-size: 14px;
+    }
+
+    .table-users td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .aksi {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .judul {
+        font-size: 24px;
+    }
+
+    .btn-tambah {
+        padding: 11px 18px;
+        font-size: 15px;
+    }
+
+    .sub-judul {
+        font-size: 18px;
+    }
+
+    .pending-header {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .pending-header .sub-judul {
+        margin-bottom: 0;
+    }
+}
