@@ -273,12 +273,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // ===============================================
             // TAMBAHKAN TITIK LOKASI PUSKESMAS DARI DATA INPUT
             // ===============================================
+            const puskesmasMarkers = [];
+            const urlParams = new URLSearchParams(window.location.search);
+            const targetPkmId = urlParams.get('puskesmas_id');
+            const targetPkmName = urlParams.get('puskesmas');
+
             if (Array.isArray(dataPuskesmas) && dataPuskesmas.length > 0) {
                 dataPuskesmas.forEach(pkm => {
                     if (!pkm.latitude || !pkm.longitude) return;
 
+                    const markerElId = `pkm-marker-${pkm.id}`;
                     const pkmMarkerHtml = `
-                        <div class="puskesmas-marker-container">
+                        <div class="puskesmas-marker-container" id="${markerElId}">
                             <div class="puskesmas-pin-wrapper">
                                 <img src="<?php echo e(asset('images/icon/titik lokasi.png')); ?>" class="puskesmas-pin-img" alt="Pin">
                                 <span class="puskesmas-status-dot" style="background-color: ${pkm.warna};"></span>
@@ -306,7 +312,51 @@ document.addEventListener('DOMContentLoaded', function() {
                         L.DomEvent.stopPropagation(e);
                         openPuskesmasPopup([pkm.latitude, pkm.longitude], pkm);
                     });
+
+                    puskesmasMarkers.push({
+                        marker: pkmMarker,
+                        data: pkm,
+                        elementId: markerElId
+                    });
                 });
+            }
+
+            // ===============================================
+            // AUTO FOCUS & BUKA POPUP JIKA DARI FITUR PRIORITAS
+            // ===============================================
+            if (targetPkmId || targetPkmName) {
+                const matched = puskesmasMarkers.find(item => {
+                    if (targetPkmId && String(item.data.id) === String(targetPkmId)) {
+                        return true;
+                    }
+                    if (targetPkmName && item.data.nama && item.data.nama.toLowerCase().trim() === targetPkmName.toLowerCase().trim()) {
+                        return true;
+                    }
+                    return false;
+                });
+
+                if (matched) {
+                    const targetLat = matched.data.latitude;
+                    const targetLng = matched.data.longitude;
+
+                    // Delay sedikit agar GeoJSON Lombok selesai render dengan mulus
+                    setTimeout(() => {
+                        map.flyTo([targetLat, targetLng], 14, {
+                            duration: 1.2,
+                            easeLinearity: 0.25
+                        });
+
+                        setTimeout(() => {
+                            openPuskesmasPopup([targetLat, targetLng], matched.data);
+                            
+                            // Tambahkan efek animasi highlight pada marker pin
+                            const el = document.getElementById(matched.elementId);
+                            if (el) {
+                                el.classList.add('target-highlight');
+                            }
+                        }, 1250);
+                    }, 350);
+                }
             }
         })
         .catch(err => {

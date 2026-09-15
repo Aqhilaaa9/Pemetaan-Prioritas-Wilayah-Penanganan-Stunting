@@ -1,6 +1,4 @@
-
-
-<?php $__env->startSection('title','Import Data Stunting'); ?>
+<?php $__env->startSection('title', 'Import Data Stunting'); ?>
 
 <?php $__env->startPush('styles'); ?>
 <link rel="stylesheet" href="<?php echo e(asset('css/importStunting.css')); ?>">
@@ -15,20 +13,31 @@
     </h1>
 
     <?php if(session('error')): ?>
-        <div style="background-color: #fee2e2; color: #991b1b; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px;">
+        <div class="alert-error">
             <?php echo e(session('error')); ?>
 
         </div>
     <?php endif; ?>
 
-    <div style="margin-bottom: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 16px 20px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
-        <div>
-            <strong style="color: #166534; display: block; margin-bottom: 4px;">💡 Belum memiliki format Excel yang sesuai?</strong>
-            <span style="color: #15803d; font-size: 13px;">Unduh template resmi agar struktur kolom (Kabupaten, Puskesmas, Balita, Stunting, BBLR, ASI, Pelayanan, Tanggal) sesuai secara otomatis.</span>
+    <?php if(session('success')): ?>
+        <div class="alert-success">
+            <?php echo e(session('success')); ?>
+
         </div>
-        <a href="<?php echo e(route('importStunting.template')); ?>" 
-           style="background-color: #059669; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 600; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px;">
-            📥 Download Template Excel
+    <?php endif; ?>
+
+    <!-- TEMPLATE EXCEL BANNER -->
+    <div class="template-card">
+        <div class="template-card-header">
+            <img src="<?php echo e(asset('images/icon/ide.png')); ?>" alt="Ide" class="icon-ide">
+            <strong>Belum memiliki format Excel yang sesuai?</strong>
+        </div>
+        <p class="template-card-desc">
+            Unduh template resmi agar struktur kolom (Kabupaten, Puskesmas, Balita, Stunting, BBLR, ASI, Pelayanan, Tanggal) sesuai secara otomatis.
+        </p>
+        <a href="<?php echo e(route('importStunting.template')); ?>" class="btn-download-template">
+            <img src="<?php echo e(asset('images/icon/unduh file.png')); ?>" alt="Unduh Template" class="template-btn-icon">
+            <span>Download Template Excel</span>
         </a>
     </div>
 
@@ -40,14 +49,12 @@
 
         <div class="form-group">
 
-            <label>Import File</label>
+            <label class="label-title">Import File</label>
 
             <div class="upload-box">
 
                 <label class="btn-pilih">
-
                     Pilih File
-
                     <input
                         type="file"
                         id="excel"
@@ -55,7 +62,6 @@
                         accept=".xls,.xlsx,.csv"
                         required
                         hidden>
-
                 </label>
 
                 <span id="namaFile">
@@ -75,9 +81,7 @@
 
             <button type="submit"
                     class="btn-simpan">
-
                 Tambah
-
             </button>
 
         </div>
@@ -87,17 +91,13 @@
 </div>
 
 <script>
-
-document.getElementById('excel').addEventListener('change',function(){
-
-    if(this.files.length>0){
-
-        document.getElementById('namaFile').innerHTML=this.files[0].name;
-
+document.getElementById('excel').addEventListener('change', function() {
+    if (this.files.length > 0) {
+        document.getElementById('namaFile').textContent = this.files[0].name;
+    } else {
+        document.getElementById('namaFile').textContent = 'Masukkan File Anda';
     }
-
 });
-
 </script>
 
 <?php $__env->stopSection(); ?>

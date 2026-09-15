@@ -206,7 +206,7 @@ class DataStuntingController extends Controller
 
         $headers = [
             'Kabupaten',
-            'Nama Puskesmas',
+            'Puskesmas',
             'Jumlah Balita',
             'Jumlah Stunting',
             'Jumlah BBLR',
@@ -221,9 +221,9 @@ class DataStuntingController extends Controller
         $sheet->getStyle('A1:H1')->getFont()->setBold(true);
 
         $sampleData = [
-            ['Lombok Barat', 'Puskesmas Gerung', 1200, 150, 25, 75.5, 88.0, date('Y-m-d')],
-            ['Lombok Tengah', 'Puskesmas Praya', 1500, 180, 30, 80.0, 90.0, date('Y-m-d')],
-            ['Lombok Timur', 'Puskesmas Selong', 1800, 210, 35, 82.5, 92.0, date('Y-m-d')],
+            ['Lombok Barat', 'Gerung', 1200, 150, 25, 75.5, 88.0, date('Y-m-d')],
+            ['Lombok Tengah', 'Praya', 1500, 180, 30, 80.0, 90.0, date('Y-m-d')],
+            ['Lombok Timur', 'Selong', 1800, 210, 35, 82.5, 92.0, date('Y-m-d')],
         ];
 
         $sheet->fromArray($sampleData, null, 'A2');
