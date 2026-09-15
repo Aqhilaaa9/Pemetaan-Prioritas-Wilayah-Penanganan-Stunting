@@ -1,10 +1,10 @@
 {
   "framework": null,
-  "buildCommand": "composer install --no-dev --optimize-autoloader && npm install && npm run build && php artisan config:cache && php artisan view:cache",
+  "buildCommand": "npm install && npm run build",
   "outputDirectory": "public",
   "functions": {
     "api/index.php": {
-      "runtime": "vercel-php@0.7.4"
+      "runtime": "vercel-php@0.8.0"
     }
   },
   "rewrites": [
@@ -12,5 +12,17 @@
       "source": "/(.*)",
       "destination": "/api/index.php"
     }
-  ]
+  ],
+  "env": {
+    "LOG_CHANNEL": "stderr",
+    "VIEW_COMPILED_PATH": "/tmp/views",
+    "APP_CONFIG_CACHE": "/tmp/cache/config.php",
+    "APP_EVENTS_CACHE": "/tmp/cache/events.php",
+    "APP_PACKAGES_CACHE": "/tmp/cache/packages.php",
+    "APP_ROUTES_CACHE": "/tmp/cache/routes.php",
+    "APP_SERVICES_CACHE": "/tmp/cache/services.php",
+    "SESSION_DRIVER": "database",
+    "CACHE_STORE": "database",
+    "QUEUE_CONNECTION": "sync"
+  }
 }
