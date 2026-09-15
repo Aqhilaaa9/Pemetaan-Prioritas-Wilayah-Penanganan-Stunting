@@ -6,4 +6,8 @@ storage/framework/cache/*
 storage/framework/sessions/*
 storage/framework/views/*
 .env
+.env.*
+!.env.example
+.env copy
+public/hot
 composer2.phar
