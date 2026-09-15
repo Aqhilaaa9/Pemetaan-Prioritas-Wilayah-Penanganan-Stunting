@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     libxslt1-dev \
     sqlite3 \
     libsqlite3-dev \
+    default-mysql-client \
     && docker-php-ext-install \
         pdo_sqlite \
         pdo_mysql \
