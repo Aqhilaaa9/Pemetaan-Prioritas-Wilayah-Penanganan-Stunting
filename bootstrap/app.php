@@ -13,6 +13,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'role' => \App\Http\Middleware\RoleMiddleware::class,
         ]);
+
+        // Railway (and most PaaS hosts) terminate HTTPS at their edge proxy and
+        // forward plain HTTP internally. Trust that proxy so Laravel reads the
+        // X-Forwarded-Proto header and generates https:// URLs correctly.
+        $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
