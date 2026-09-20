@@ -1,6 +1,12 @@
   <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
+
+        <button type="button" class="sidebar-close" data-sidebar-close aria-label="Tutup menu navigasi">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+        </button>
 
         <div class="logo">
 
@@ -72,3 +78,34 @@
 
 
     </aside>
+
+    <div class="sidebar-backdrop" data-sidebar-close></div>
+
+    <script>
+    (function () {
+        var body = document.body;
+
+        function setOpen(open) {
+            body.classList.toggle('sidebar-open', open);
+            document.querySelectorAll('[data-sidebar-toggle]').forEach(function (btn) {
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+        }
+
+        document.addEventListener('click', function (e) {
+            if (e.target.closest('[data-sidebar-toggle]')) {
+                setOpen(!body.classList.contains('sidebar-open'));
+            } else if (e.target.closest('[data-sidebar-close]')) {
+                setOpen(false);
+            }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') setOpen(false);
+        });
+
+        window.matchMedia('(min-width: 992px)').addEventListener('change', function (mq) {
+            if (mq.matches) setOpen(false);
+        });
+    })();
+    </script>

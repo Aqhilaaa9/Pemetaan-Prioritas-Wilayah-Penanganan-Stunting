@@ -269,3 +269,57 @@ input:focus, select:focus{
         width:100%;
     }
 }
+
+@media (max-width: 575.98px) {
+    body {
+        padding: 16px 12px;
+    }
+
+    .container {
+        border-radius: 16px;
+    }
+
+    .left {
+        padding: 28px 20px;
+    }
+
+    .logo {
+        width: 84px;
+        margin-bottom: 10px;
+    }
+
+    .welcome h1 {
+        font-size: 26px;
+        margin-bottom: 8px;
+    }
+
+    .welcome h3 {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .welcome p {
+        font-size: 12.5px;
+        margin-bottom: 16px;
+    }
+
+    .btn-login {
+        padding: 9px 18px;
+        font-size: 13px;
+    }
+
+    .right {
+        padding: 28px 20px;
+    }
+
+    .right h2 {
+        font-size: 26px;
+        margin-bottom: 18px;
+    }
+
+    /* iOS Safari zooms into inputs with font-size below 16px */
+    input,
+    select {
+        font-size: 16px;
+    }
+}

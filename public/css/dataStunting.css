@@ -149,3 +149,66 @@ td{
 .btn-delete:hover{
     background:#b52b27;
 }
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991.98px) {
+    .page-title {
+        font-size: 30px;
+        margin-bottom: 22px;
+    }
+
+    .filter-section {
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .filter-section select {
+        flex: 1 1 200px;
+        width: auto;
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+
+    .btn-tambah {
+        padding: 12px 24px;
+        border-radius: 12px;
+        font-size: 17px;
+    }
+
+    table {
+        min-width: 980px;
+    }
+
+    th {
+        padding: 13px 10px;
+        font-size: 14px;
+    }
+
+    td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .empty-data {
+        padding: 36px 16px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .page-title {
+        font-size: 23px;
+    }
+
+    .filter-section select {
+        flex-basis: 100%;
+    }
+
+    .button-section .btn-tambah {
+        flex: 1;
+        text-align: center;
+    }
+}

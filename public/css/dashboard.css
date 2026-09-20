@@ -110,6 +110,13 @@ body {
     object-fit: contain;
 }
 
+/* Mobile-only controls, shown in the <992px media query below */
+.sidebar-toggle,
+.sidebar-close,
+.sidebar-backdrop {
+    display: none;
+}
+
 /* MAIN & NAVBAR */
 .main {
     flex: 1;
@@ -414,7 +421,10 @@ body {
     text-decoration: none;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
+
+/* .top-card and .dashboard-middle already wrap via flex-wrap; forcing
+   flex-direction: column here turned their flex-basis into a fixed height. */
 @media (max-width: 1100px) {
     .content {
         padding: 20px;
@@ -422,8 +432,223 @@ body {
     .dashboard-title {
         font-size: 36px;
     }
-    .top-card, .dashboard-middle, .bottom-grid {
-        flex-direction: column;
+    .bottom-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet & phone: sidebar becomes an off-canvas drawer */
+@media (max-width: 991.98px) {
+    body.sidebar-open {
+        overflow: hidden;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: min(280px, 84vw);
+        transform: translateX(-100%);
+        visibility: hidden;
+        transition: transform 0.25s ease, visibility 0.25s;
+        z-index: 1100;
+    }
+
+    body.sidebar-open .sidebar {
+        transform: translateX(0);
+        visibility: visible;
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .sidebar-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.45);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 1090;
+    }
+
+    body.sidebar-open .sidebar-backdrop {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .sidebar-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        border: none;
+        border-radius: 8px;
+        background: #f0f4f4;
+        color: #4a5568;
+        cursor: pointer;
+    }
+
+    .sidebar-close:hover {
+        background: #dff8f5;
+        color: #009688;
+    }
+
+    .sidebar-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        margin-right: auto;
+        border: none;
+        border-radius: 10px;
+        background: #ffffff;
+        color: #00897b;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    .sidebar-toggle:hover {
+        background: #f0fbfa;
+    }
+
+    .sidebar-toggle:focus-visible,
+    .sidebar-close:focus-visible {
+        outline: 2px solid #009688;
+        outline-offset: 2px;
+    }
+
+    .navbar {
+        height: 60px;
+        padding: 0 16px;
+    }
+
+    .user,
+    .user-menu-link {
+        font-size: 16px;
+    }
+
+    /* Higher specificity than the per-page `.content { padding: 40px }` rules */
+    .main .content {
+        padding: 20px 16px;
+    }
+
+    .dashboard-header-row {
+        margin-bottom: 22px;
+    }
+
+    .dashboard-title {
+        font-size: 30px;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-top: 28px;
+        margin-bottom: 20px;
+    }
+
+    .top-card {
+        gap: 16px;
+        margin-bottom: 28px;
+    }
+
+    .card-dashboard {
+        padding: 18px 20px;
+    }
+
+    .card-dashboard .jumlah {
+        font-size: 48px;
+    }
+
+    .dashboard-middle {
+        gap: 28px;
+        margin-bottom: 32px;
+    }
+
+    .bottom-grid {
+        gap: 20px;
+    }
+
+    .bottom-card {
+        padding: 22px 20px;
+        min-height: 0;
+    }
+}
+
+/* Phone */
+@media (max-width: 575.98px) {
+    .dashboard-title {
+        font-size: 26px;
+    }
+
+    .section-title {
+        font-size: 21px;
+    }
+
+    .tahun-filter select {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+
+    .card-dashboard h4 {
+        font-size: 17px;
+    }
+
+    .card-dashboard .jumlah {
+        font-size: 38px;
+    }
+
+    .chart-wrapper {
+        width: 100%;
+        max-width: 240px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .chart-legend {
+        flex-wrap: wrap;
+        font-size: 14px;
+    }
+
+    .persentase-card {
+        gap: 12px;
+    }
+
+    .persen {
+        padding: 16px 10px;
+    }
+
+    .persen h2 {
+        font-size: 26px;
+    }
+
+    .persen p {
+        font-size: 13px;
+    }
+
+    .bottom-card h3 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .ranking-item {
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    .ranking-item img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .ranking-item span {
+        font-size: 16px;
+        overflow-wrap: anywhere;
     }
 }

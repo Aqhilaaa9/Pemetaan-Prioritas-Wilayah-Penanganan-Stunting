@@ -1,0 +1,11 @@
+vendor
+node_modules
+Dockerfile
+Dockerfile.railway
+docker-compose.yml
+docker/
+railway.json
+storage/logs/*
+public/index.php
+composer2.phar
+.env
