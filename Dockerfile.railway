@@ -17,9 +17,11 @@ RUN apt-get update && apt-get install -y \
     libxslt1-dev \
     sqlite3 \
     libsqlite3-dev \
+    libpq-dev \
     && docker-php-ext-install \
         pdo_sqlite \
         pdo_mysql \
+        pdo_pgsql \
         zip \
         intl \
         gd \
